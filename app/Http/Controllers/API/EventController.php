@@ -16,28 +16,8 @@ class EventController extends BaseController
     public function index()
     {
         $events = Event::where('user_id',auth('sanctum')->user()->id)->get();
-        $responseData=[];
-        foreach ($events as $event){
-            $responseData['event'][]=[
-                'title'=>$event->title,
-                'backgroundColor'=>$event->backgroundColor,
-                'borderColor' =>$event->borderColor,
-                'status' =>$event->status,
-            ];
-           $eventDates= $event->eventDates;
-            foreach ($eventDates as $eventDate){
-                $responseData['events_dates'][]=[
-                    'title'=>$event->title,
-                    'backgroundColor'=>$event->backgroundColor,
-                    'borderColor' =>$event->borderColor,
-                    'status' =>$event->status,
-                    'start' =>$eventDate->start??'',
-                    'end' =>$eventDate->end??'',
-                    'allDay' =>$eventDate->allDay??'',
-                ];
-            }
-        }
-        return $this->sendResponse($responseData, 'Events retrieved successfully.');
+
+        return $this->sendResponse($events->toArray(), 'Events retrieved successfully.');
     }
     /**
      * Store a newly created resource in storage.
@@ -82,9 +62,9 @@ class EventController extends BaseController
     {
         $event = Event::find($id);
         if (is_null($event)) {
-            return $this->sendError('Product not found.');
+            return $this->sendError('Event not found.');
         }
-        return $this->sendResponse($event->toArray(), 'Product retrieved successfully.');
+        return $this->sendResponse($event->toArray(), 'Event retrieved successfully.');
     }
     /**
      * Update the specified resource in storage.
@@ -96,17 +76,13 @@ class EventController extends BaseController
     public function update(Request $request, Event $event)
     {
         $input = $request->all();
-        $validator = Validator::make($input, [
-            'name' => 'required',
-            'detail' => 'required'
-        ]);
-        if($validator->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());
-        }
-        $event->name = $input['name'];
-        $event->detail = $input['detail'];
+
+        $event->title = $input['title'] ?? $event->title ;
+        $event->backgroundColor = $input['backgroundColor'] ?? $event->backgroundColor;
+        $event->borderColor = $input['borderColor'] ?? $event->borderColor;
+        $event->status = $input['status'] ?? $event->status;
         $event->save();
-        return $this->sendResponse($event->toArray(), 'Product updated successfully.');
+        return $this->sendResponse($event->toArray(), 'Event updated successfully.');
     }
     /**
      * Remove the specified resource from storage.
@@ -117,6 +93,6 @@ class EventController extends BaseController
     public function destroy(Event $event)
     {
         $event->delete();
-        return $this->sendResponse($event->toArray(), 'Product deleted successfully.');
+        return $this->sendResponse($event->toArray(), 'Event deleted successfully.');
     }
 }

@@ -25,12 +25,10 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../index3.html" class="nav-link">Home</a>
+                <a href="/" class="nav-link">Home</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <form method="POST" action="">
-                <a methods="GET" href="/logout" class="nav-link">Contact</a>
-                </form>
+                <a id="logout" href="/" type="button" class="nav-link">Logout</a>
 
             </li>
         </ul>
@@ -865,11 +863,6 @@
                                 <div class="card-body">
                                     <!-- the events -->
                                     <div id="external-events">
-                                        <div class="external-event bg-success">Lunch</div>
-                                        <div class="external-event bg-warning">Go home</div>
-                                        <div class="external-event bg-info">Do homework</div>
-                                        <div class="external-event bg-primary">Work on UI design</div>
-                                        <div class="external-event bg-danger">Sleep tight</div>
                                         <div class="checkbox">
                                             <label for="drop-remove">
                                                 <input type="checkbox" id="drop-remove">
@@ -962,7 +955,16 @@
 <!-- Page specific script -->
 <script>
 
-
+    $('#logout').click(function(){
+        axios.post('logout', {
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    })
     $('#add-new-event').submit(function(){
 
         var email = $("#email").val();
@@ -1007,7 +1009,6 @@
 
             })
         }
-
         ini_events($('#external-events div.external-event'))
 
         /* initialize the calendar
@@ -1039,24 +1040,53 @@
                 };
             }
         });
-
-
-        var token = localStorage.getItem('token');
-        const header = `Authorization: Bearer ${token}`;
-        let responseData;
+        async function getEvent(){
+            var token = localStorage.getItem('token');
+            const header = `Authorization: Bearer ${token}`;
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-             axios.get('/api/events')
-                .then(response =>  {
 
-                   return response.data;
-                });
 
-        const getEnd = async () => {
-            return await axios.get('/api/events').then(res => res);
+            const getEvents = async () => {
+                return await axios.get('/api/events').then(res => res);
+            }
+           let {data:{data}} = await getEvents();
+            return     data   ;
         }
-        let {data:{data}} = await getEnd();
-        console.log(data);
+        async function getEventData(){
+            var token = localStorage.getItem('token');
+            const header = `Authorization: Bearer ${token}`;
+            axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
+
+            const getEventDate = async () => {
+                return await axios.get('/api/event-date').then(res => res);
+            }
+            let {data:{data}} = await getEventDate();
+            return     data   ;
+        }
+
+        const eventApi=await getEvent();
+        const eventDataApi=await getEventData();
+        for (let i = 0; i < eventApi.length; i += 1) {
+                // Get value and make sure it is not null
+            var val = eventApi[i].title;
+            if (val.length == 0) {
+                return
+            }
+
+            // Create events
+            var event = $('<div />')
+            event.css({
+                'background-color':  eventApi[i].backgroundColor,
+                'border-color'    :  eventApi[i].borderColor,
+                'color'           : '#fff'
+            }).addClass('external-event')
+            event.text(val)
+            $('#external-events').prepend(event)
+
+            // Add draggable funtionality
+            ini_events(event)
+        }
        // getEnd().then(res =>console.log( res.data.data));
         var calendar = new Calendar(calendarEl, {
             headerToolbar: {
@@ -1066,7 +1096,7 @@
             },
             themeSystem: 'bootstrap',
             //Random default events
-            events: data.events_dates,
+            events: eventDataApi,
             editable  : true,
             droppable : true, // this allows things to be dropped onto the calendar !!!
             drop      : function(info) {
@@ -1122,8 +1152,6 @@
             }).addClass('external-event')
             event.text(val)
             $('#external-events').prepend(event)
-            console.log(currColor)
-            console.log($('#new-event').val())
             // Add draggable funtionality
             ini_events(event)
             // Remove event from text input

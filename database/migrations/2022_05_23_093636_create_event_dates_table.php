@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('event_dates', function (Blueprint $table) {
-            $table->increments('event_date_id');
+            $table->increments('id');
             $table->boolean('allDay')->default(false);
             $table->timestamp('start')->nullable();
             $table->timestamp('end')->nullable();

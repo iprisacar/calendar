@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('register', 'App\Http\Controllers\API\RegisterController@register');
 Route::middleware('auth:sanctum')->group( function () {
     Route::resource('events', 'App\Http\Controllers\API\EventController');
-    Route::resource('event_date', 'App\Http\Controllers\API\EventDateController');
+    Route::resource('event-date', 'App\Http\Controllers\API\EventDateController');
 });
 
 Route::post('/login','App\Http\Controllers\LoginController@login')->middleware('cors');
