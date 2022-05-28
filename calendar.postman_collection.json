@@ -1,0 +1,593 @@
+{
+	"info": {
+		"_postman_id": "52bf6476-8723-4018-a04d-8b87bdbb7cdc",
+		"name": "calendar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "all Events",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "28|fEjIYExsCHaZWnUNpvV48oxLdVFtvq52o5Nd0cxh",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNzQ3OTE2OTlmMzQyZTkwNTQyYTZmYjY2ODE0MDYzODc2ZjIzOTRmMzI2ODk0M2ZkMmNhZjg3MjcwMjYyMTQxMDFkYmEwYTVkNTc3ZjJiMjUiLCJpYXQiOjE2NTMwNzQwNjMuMjgzMjAxLCJuYmYiOjE2NTMwNzQwNjMuMjgzMjA1LCJleHAiOjE2ODQ2MTAwNjMuMjY2MzQ0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.NoHJOnE90WSGqoz21-SAECPKHs1tnXz8tp8WGu0TwYRg0rqplxJSb31CPA_6YgSfSvRFOCbslq16f3MXGLqIBixHlD4locl9LnEk-844femR9MRL5YoIey4yheZGSdpd8luq63V8OnvjidRIIqgwI5hoKcx4VrSxtmfkIUpv9f9zG3h4x7tS60L0vfXD4IWpEtNvmV2hLkSDe73s2cbHrfsp7XTQCKIGkYvyXBaYiSXdlcv_L70mCA1VVodHuHNQhS9lHeUKatdwbA6YSiwSMZR4Aq8ZcDNzRPdc_eSHzOSBALGc02039LNnYKlj-O8rKrZ3SjRyYNmnZyS2OOJxEp2N34WyqaVE2siZvnE3fV_sO4aP8Jpj8np7EQRLNqml7yvcv522LKOr-lBh26nA6Bb7f6HseEIGfLfUpEOgpnITqsHkD4dBDttspwaGLpWV3gBg9BdnpU2uXkJN7NScXY1JWtK5bXvPBifGD2RtMy97VW9hfPtnm4kvqaMUBn6UgcdOMlKAu5e2zXLm0LZ21xTbaqNdI3svSETRvxrQsz6qNl6ZTM_6rKQKbkOqemw9U8dB1CU9G5dJ8POP57QVxvkmY69CSquwOtHoYMERela8c4vaI_-y8F5d2u3wXSpomYAOVCO4jGwhceKHfo_-9fA6jUVlT9dGft_1X2znSwA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/events",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "One Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "28|fEjIYExsCHaZWnUNpvV48oxLdVFtvq52o5Nd0cxh",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNzQ3OTE2OTlmMzQyZTkwNTQyYTZmYjY2ODE0MDYzODc2ZjIzOTRmMzI2ODk0M2ZkMmNhZjg3MjcwMjYyMTQxMDFkYmEwYTVkNTc3ZjJiMjUiLCJpYXQiOjE2NTMwNzQwNjMuMjgzMjAxLCJuYmYiOjE2NTMwNzQwNjMuMjgzMjA1LCJleHAiOjE2ODQ2MTAwNjMuMjY2MzQ0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.NoHJOnE90WSGqoz21-SAECPKHs1tnXz8tp8WGu0TwYRg0rqplxJSb31CPA_6YgSfSvRFOCbslq16f3MXGLqIBixHlD4locl9LnEk-844femR9MRL5YoIey4yheZGSdpd8luq63V8OnvjidRIIqgwI5hoKcx4VrSxtmfkIUpv9f9zG3h4x7tS60L0vfXD4IWpEtNvmV2hLkSDe73s2cbHrfsp7XTQCKIGkYvyXBaYiSXdlcv_L70mCA1VVodHuHNQhS9lHeUKatdwbA6YSiwSMZR4Aq8ZcDNzRPdc_eSHzOSBALGc02039LNnYKlj-O8rKrZ3SjRyYNmnZyS2OOJxEp2N34WyqaVE2siZvnE3fV_sO4aP8Jpj8np7EQRLNqml7yvcv522LKOr-lBh26nA6Bb7f6HseEIGfLfUpEOgpnITqsHkD4dBDttspwaGLpWV3gBg9BdnpU2uXkJN7NScXY1JWtK5bXvPBifGD2RtMy97VW9hfPtnm4kvqaMUBn6UgcdOMlKAu5e2zXLm0LZ21xTbaqNdI3svSETRvxrQsz6qNl6ZTM_6rKQKbkOqemw9U8dB1CU9G5dJ8POP57QVxvkmY69CSquwOtHoYMERela8c4vaI_-y8F5d2u3wXSpomYAOVCO4jGwhceKHfo_-9fA6jUVlT9dGft_1X2znSwA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/events/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"events",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "28|fEjIYExsCHaZWnUNpvV48oxLdVFtvq52o5Nd0cxh",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNzQ3OTE2OTlmMzQyZTkwNTQyYTZmYjY2ODE0MDYzODc2ZjIzOTRmMzI2ODk0M2ZkMmNhZjg3MjcwMjYyMTQxMDFkYmEwYTVkNTc3ZjJiMjUiLCJpYXQiOjE2NTMwNzQwNjMuMjgzMjAxLCJuYmYiOjE2NTMwNzQwNjMuMjgzMjA1LCJleHAiOjE2ODQ2MTAwNjMuMjY2MzQ0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.NoHJOnE90WSGqoz21-SAECPKHs1tnXz8tp8WGu0TwYRg0rqplxJSb31CPA_6YgSfSvRFOCbslq16f3MXGLqIBixHlD4locl9LnEk-844femR9MRL5YoIey4yheZGSdpd8luq63V8OnvjidRIIqgwI5hoKcx4VrSxtmfkIUpv9f9zG3h4x7tS60L0vfXD4IWpEtNvmV2hLkSDe73s2cbHrfsp7XTQCKIGkYvyXBaYiSXdlcv_L70mCA1VVodHuHNQhS9lHeUKatdwbA6YSiwSMZR4Aq8ZcDNzRPdc_eSHzOSBALGc02039LNnYKlj-O8rKrZ3SjRyYNmnZyS2OOJxEp2N34WyqaVE2siZvnE3fV_sO4aP8Jpj8np7EQRLNqml7yvcv522LKOr-lBh26nA6Bb7f6HseEIGfLfUpEOgpnITqsHkD4dBDttspwaGLpWV3gBg9BdnpU2uXkJN7NScXY1JWtK5bXvPBifGD2RtMy97VW9hfPtnm4kvqaMUBn6UgcdOMlKAu5e2zXLm0LZ21xTbaqNdI3svSETRvxrQsz6qNl6ZTM_6rKQKbkOqemw9U8dB1CU9G5dJ8POP57QVxvkmY69CSquwOtHoYMERela8c4vaI_-y8F5d2u3wXSpomYAOVCO4jGwhceKHfo_-9fA6jUVlT9dGft_1X2znSwA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/events/2?backgroundColor=444",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"events",
+						"2"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "backgroundColor",
+							"value": "444"
+						},
+						{
+							"key": "borderColor",
+							"value": "2222",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "22",
+							"disabled": true
+						},
+						{
+							"key": "title",
+							"value": "1111",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drop Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "28|fEjIYExsCHaZWnUNpvV48oxLdVFtvq52o5Nd0cxh",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNzQ3OTE2OTlmMzQyZTkwNTQyYTZmYjY2ODE0MDYzODc2ZjIzOTRmMzI2ODk0M2ZkMmNhZjg3MjcwMjYyMTQxMDFkYmEwYTVkNTc3ZjJiMjUiLCJpYXQiOjE2NTMwNzQwNjMuMjgzMjAxLCJuYmYiOjE2NTMwNzQwNjMuMjgzMjA1LCJleHAiOjE2ODQ2MTAwNjMuMjY2MzQ0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.NoHJOnE90WSGqoz21-SAECPKHs1tnXz8tp8WGu0TwYRg0rqplxJSb31CPA_6YgSfSvRFOCbslq16f3MXGLqIBixHlD4locl9LnEk-844femR9MRL5YoIey4yheZGSdpd8luq63V8OnvjidRIIqgwI5hoKcx4VrSxtmfkIUpv9f9zG3h4x7tS60L0vfXD4IWpEtNvmV2hLkSDe73s2cbHrfsp7XTQCKIGkYvyXBaYiSXdlcv_L70mCA1VVodHuHNQhS9lHeUKatdwbA6YSiwSMZR4Aq8ZcDNzRPdc_eSHzOSBALGc02039LNnYKlj-O8rKrZ3SjRyYNmnZyS2OOJxEp2N34WyqaVE2siZvnE3fV_sO4aP8Jpj8np7EQRLNqml7yvcv522LKOr-lBh26nA6Bb7f6HseEIGfLfUpEOgpnITqsHkD4dBDttspwaGLpWV3gBg9BdnpU2uXkJN7NScXY1JWtK5bXvPBifGD2RtMy97VW9hfPtnm4kvqaMUBn6UgcdOMlKAu5e2zXLm0LZ21xTbaqNdI3svSETRvxrQsz6qNl6ZTM_6rKQKbkOqemw9U8dB1CU9G5dJ8POP57QVxvkmY69CSquwOtHoYMERela8c4vaI_-y8F5d2u3wXSpomYAOVCO4jGwhceKHfo_-9fA6jUVlT9dGft_1X2znSwA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/events/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"events",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Event Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "28|fEjIYExsCHaZWnUNpvV48oxLdVFtvq52o5Nd0cxh",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNzQ3OTE2OTlmMzQyZTkwNTQyYTZmYjY2ODE0MDYzODc2ZjIzOTRmMzI2ODk0M2ZkMmNhZjg3MjcwMjYyMTQxMDFkYmEwYTVkNTc3ZjJiMjUiLCJpYXQiOjE2NTMwNzQwNjMuMjgzMjAxLCJuYmYiOjE2NTMwNzQwNjMuMjgzMjA1LCJleHAiOjE2ODQ2MTAwNjMuMjY2MzQ0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.NoHJOnE90WSGqoz21-SAECPKHs1tnXz8tp8WGu0TwYRg0rqplxJSb31CPA_6YgSfSvRFOCbslq16f3MXGLqIBixHlD4locl9LnEk-844femR9MRL5YoIey4yheZGSdpd8luq63V8OnvjidRIIqgwI5hoKcx4VrSxtmfkIUpv9f9zG3h4x7tS60L0vfXD4IWpEtNvmV2hLkSDe73s2cbHrfsp7XTQCKIGkYvyXBaYiSXdlcv_L70mCA1VVodHuHNQhS9lHeUKatdwbA6YSiwSMZR4Aq8ZcDNzRPdc_eSHzOSBALGc02039LNnYKlj-O8rKrZ3SjRyYNmnZyS2OOJxEp2N34WyqaVE2siZvnE3fV_sO4aP8Jpj8np7EQRLNqml7yvcv522LKOr-lBh26nA6Bb7f6HseEIGfLfUpEOgpnITqsHkD4dBDttspwaGLpWV3gBg9BdnpU2uXkJN7NScXY1JWtK5bXvPBifGD2RtMy97VW9hfPtnm4kvqaMUBn6UgcdOMlKAu5e2zXLm0LZ21xTbaqNdI3svSETRvxrQsz6qNl6ZTM_6rKQKbkOqemw9U8dB1CU9G5dJ8POP57QVxvkmY69CSquwOtHoYMERela8c4vaI_-y8F5d2u3wXSpomYAOVCO4jGwhceKHfo_-9fA6jUVlT9dGft_1X2znSwA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "12345",
+							"type": "default"
+						},
+						{
+							"key": "backgroundColor",
+							"value": "sdfsdf345",
+							"type": "default"
+						},
+						{
+							"key": "borderColor",
+							"value": "sdfsdf4354",
+							"type": "default"
+						},
+						{
+							"key": "username",
+							"value": "piv308@gmail.com",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "11111111",
+							"type": "default",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/events",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all Events date",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "28|fEjIYExsCHaZWnUNpvV48oxLdVFtvq52o5Nd0cxh",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNzQ3OTE2OTlmMzQyZTkwNTQyYTZmYjY2ODE0MDYzODc2ZjIzOTRmMzI2ODk0M2ZkMmNhZjg3MjcwMjYyMTQxMDFkYmEwYTVkNTc3ZjJiMjUiLCJpYXQiOjE2NTMwNzQwNjMuMjgzMjAxLCJuYmYiOjE2NTMwNzQwNjMuMjgzMjA1LCJleHAiOjE2ODQ2MTAwNjMuMjY2MzQ0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.NoHJOnE90WSGqoz21-SAECPKHs1tnXz8tp8WGu0TwYRg0rqplxJSb31CPA_6YgSfSvRFOCbslq16f3MXGLqIBixHlD4locl9LnEk-844femR9MRL5YoIey4yheZGSdpd8luq63V8OnvjidRIIqgwI5hoKcx4VrSxtmfkIUpv9f9zG3h4x7tS60L0vfXD4IWpEtNvmV2hLkSDe73s2cbHrfsp7XTQCKIGkYvyXBaYiSXdlcv_L70mCA1VVodHuHNQhS9lHeUKatdwbA6YSiwSMZR4Aq8ZcDNzRPdc_eSHzOSBALGc02039LNnYKlj-O8rKrZ3SjRyYNmnZyS2OOJxEp2N34WyqaVE2siZvnE3fV_sO4aP8Jpj8np7EQRLNqml7yvcv522LKOr-lBh26nA6Bb7f6HseEIGfLfUpEOgpnITqsHkD4dBDttspwaGLpWV3gBg9BdnpU2uXkJN7NScXY1JWtK5bXvPBifGD2RtMy97VW9hfPtnm4kvqaMUBn6UgcdOMlKAu5e2zXLm0LZ21xTbaqNdI3svSETRvxrQsz6qNl6ZTM_6rKQKbkOqemw9U8dB1CU9G5dJ8POP57QVxvkmY69CSquwOtHoYMERela8c4vaI_-y8F5d2u3wXSpomYAOVCO4jGwhceKHfo_-9fA6jUVlT9dGft_1X2znSwA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "default"
+						},
+						{
+							"key": "client_id",
+							"value": "2",
+							"type": "default"
+						},
+						{
+							"key": "client_secret",
+							"value": "iSzMFr3O0Vz2NazpcSgtiLeZYo6ol1CnMnWn3stR",
+							"type": "default"
+						},
+						{
+							"key": "username",
+							"value": "piv308@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "11111111",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/event-date",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"event-date"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "One Event date",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "28|fEjIYExsCHaZWnUNpvV48oxLdVFtvq52o5Nd0cxh",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNzQ3OTE2OTlmMzQyZTkwNTQyYTZmYjY2ODE0MDYzODc2ZjIzOTRmMzI2ODk0M2ZkMmNhZjg3MjcwMjYyMTQxMDFkYmEwYTVkNTc3ZjJiMjUiLCJpYXQiOjE2NTMwNzQwNjMuMjgzMjAxLCJuYmYiOjE2NTMwNzQwNjMuMjgzMjA1LCJleHAiOjE2ODQ2MTAwNjMuMjY2MzQ0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.NoHJOnE90WSGqoz21-SAECPKHs1tnXz8tp8WGu0TwYRg0rqplxJSb31CPA_6YgSfSvRFOCbslq16f3MXGLqIBixHlD4locl9LnEk-844femR9MRL5YoIey4yheZGSdpd8luq63V8OnvjidRIIqgwI5hoKcx4VrSxtmfkIUpv9f9zG3h4x7tS60L0vfXD4IWpEtNvmV2hLkSDe73s2cbHrfsp7XTQCKIGkYvyXBaYiSXdlcv_L70mCA1VVodHuHNQhS9lHeUKatdwbA6YSiwSMZR4Aq8ZcDNzRPdc_eSHzOSBALGc02039LNnYKlj-O8rKrZ3SjRyYNmnZyS2OOJxEp2N34WyqaVE2siZvnE3fV_sO4aP8Jpj8np7EQRLNqml7yvcv522LKOr-lBh26nA6Bb7f6HseEIGfLfUpEOgpnITqsHkD4dBDttspwaGLpWV3gBg9BdnpU2uXkJN7NScXY1JWtK5bXvPBifGD2RtMy97VW9hfPtnm4kvqaMUBn6UgcdOMlKAu5e2zXLm0LZ21xTbaqNdI3svSETRvxrQsz6qNl6ZTM_6rKQKbkOqemw9U8dB1CU9G5dJ8POP57QVxvkmY69CSquwOtHoYMERela8c4vaI_-y8F5d2u3wXSpomYAOVCO4jGwhceKHfo_-9fA6jUVlT9dGft_1X2znSwA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/event-date/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"event-date",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Event Date",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "28|fEjIYExsCHaZWnUNpvV48oxLdVFtvq52o5Nd0cxh",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNzQ3OTE2OTlmMzQyZTkwNTQyYTZmYjY2ODE0MDYzODc2ZjIzOTRmMzI2ODk0M2ZkMmNhZjg3MjcwMjYyMTQxMDFkYmEwYTVkNTc3ZjJiMjUiLCJpYXQiOjE2NTMwNzQwNjMuMjgzMjAxLCJuYmYiOjE2NTMwNzQwNjMuMjgzMjA1LCJleHAiOjE2ODQ2MTAwNjMuMjY2MzQ0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.NoHJOnE90WSGqoz21-SAECPKHs1tnXz8tp8WGu0TwYRg0rqplxJSb31CPA_6YgSfSvRFOCbslq16f3MXGLqIBixHlD4locl9LnEk-844femR9MRL5YoIey4yheZGSdpd8luq63V8OnvjidRIIqgwI5hoKcx4VrSxtmfkIUpv9f9zG3h4x7tS60L0vfXD4IWpEtNvmV2hLkSDe73s2cbHrfsp7XTQCKIGkYvyXBaYiSXdlcv_L70mCA1VVodHuHNQhS9lHeUKatdwbA6YSiwSMZR4Aq8ZcDNzRPdc_eSHzOSBALGc02039LNnYKlj-O8rKrZ3SjRyYNmnZyS2OOJxEp2N34WyqaVE2siZvnE3fV_sO4aP8Jpj8np7EQRLNqml7yvcv522LKOr-lBh26nA6Bb7f6HseEIGfLfUpEOgpnITqsHkD4dBDttspwaGLpWV3gBg9BdnpU2uXkJN7NScXY1JWtK5bXvPBifGD2RtMy97VW9hfPtnm4kvqaMUBn6UgcdOMlKAu5e2zXLm0LZ21xTbaqNdI3svSETRvxrQsz6qNl6ZTM_6rKQKbkOqemw9U8dB1CU9G5dJ8POP57QVxvkmY69CSquwOtHoYMERela8c4vaI_-y8F5d2u3wXSpomYAOVCO4jGwhceKHfo_-9fA6jUVlT9dGft_1X2znSwA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/event-date/1?allDay=0",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"event-date",
+						"1"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "backgroundColor",
+							"value": "444",
+							"disabled": true
+						},
+						{
+							"key": "borderColor",
+							"value": "2222",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "22",
+							"disabled": true
+						},
+						{
+							"key": "allDay",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drop EventDate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "28|fEjIYExsCHaZWnUNpvV48oxLdVFtvq52o5Nd0cxh",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNzQ3OTE2OTlmMzQyZTkwNTQyYTZmYjY2ODE0MDYzODc2ZjIzOTRmMzI2ODk0M2ZkMmNhZjg3MjcwMjYyMTQxMDFkYmEwYTVkNTc3ZjJiMjUiLCJpYXQiOjE2NTMwNzQwNjMuMjgzMjAxLCJuYmYiOjE2NTMwNzQwNjMuMjgzMjA1LCJleHAiOjE2ODQ2MTAwNjMuMjY2MzQ0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.NoHJOnE90WSGqoz21-SAECPKHs1tnXz8tp8WGu0TwYRg0rqplxJSb31CPA_6YgSfSvRFOCbslq16f3MXGLqIBixHlD4locl9LnEk-844femR9MRL5YoIey4yheZGSdpd8luq63V8OnvjidRIIqgwI5hoKcx4VrSxtmfkIUpv9f9zG3h4x7tS60L0vfXD4IWpEtNvmV2hLkSDe73s2cbHrfsp7XTQCKIGkYvyXBaYiSXdlcv_L70mCA1VVodHuHNQhS9lHeUKatdwbA6YSiwSMZR4Aq8ZcDNzRPdc_eSHzOSBALGc02039LNnYKlj-O8rKrZ3SjRyYNmnZyS2OOJxEp2N34WyqaVE2siZvnE3fV_sO4aP8Jpj8np7EQRLNqml7yvcv522LKOr-lBh26nA6Bb7f6HseEIGfLfUpEOgpnITqsHkD4dBDttspwaGLpWV3gBg9BdnpU2uXkJN7NScXY1JWtK5bXvPBifGD2RtMy97VW9hfPtnm4kvqaMUBn6UgcdOMlKAu5e2zXLm0LZ21xTbaqNdI3svSETRvxrQsz6qNl6ZTM_6rKQKbkOqemw9U8dB1CU9G5dJ8POP57QVxvkmY69CSquwOtHoYMERela8c4vaI_-y8F5d2u3wXSpomYAOVCO4jGwhceKHfo_-9fA6jUVlT9dGft_1X2znSwA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/event-date/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"event-date",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Event date Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "28|fEjIYExsCHaZWnUNpvV48oxLdVFtvq52o5Nd0cxh",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNzQ3OTE2OTlmMzQyZTkwNTQyYTZmYjY2ODE0MDYzODc2ZjIzOTRmMzI2ODk0M2ZkMmNhZjg3MjcwMjYyMTQxMDFkYmEwYTVkNTc3ZjJiMjUiLCJpYXQiOjE2NTMwNzQwNjMuMjgzMjAxLCJuYmYiOjE2NTMwNzQwNjMuMjgzMjA1LCJleHAiOjE2ODQ2MTAwNjMuMjY2MzQ0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.NoHJOnE90WSGqoz21-SAECPKHs1tnXz8tp8WGu0TwYRg0rqplxJSb31CPA_6YgSfSvRFOCbslq16f3MXGLqIBixHlD4locl9LnEk-844femR9MRL5YoIey4yheZGSdpd8luq63V8OnvjidRIIqgwI5hoKcx4VrSxtmfkIUpv9f9zG3h4x7tS60L0vfXD4IWpEtNvmV2hLkSDe73s2cbHrfsp7XTQCKIGkYvyXBaYiSXdlcv_L70mCA1VVodHuHNQhS9lHeUKatdwbA6YSiwSMZR4Aq8ZcDNzRPdc_eSHzOSBALGc02039LNnYKlj-O8rKrZ3SjRyYNmnZyS2OOJxEp2N34WyqaVE2siZvnE3fV_sO4aP8Jpj8np7EQRLNqml7yvcv522LKOr-lBh26nA6Bb7f6HseEIGfLfUpEOgpnITqsHkD4dBDttspwaGLpWV3gBg9BdnpU2uXkJN7NScXY1JWtK5bXvPBifGD2RtMy97VW9hfPtnm4kvqaMUBn6UgcdOMlKAu5e2zXLm0LZ21xTbaqNdI3svSETRvxrQsz6qNl6ZTM_6rKQKbkOqemw9U8dB1CU9G5dJ8POP57QVxvkmY69CSquwOtHoYMERela8c4vaI_-y8F5d2u3wXSpomYAOVCO4jGwhceKHfo_-9fA6jUVlT9dGft_1X2znSwA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "event_id",
+							"value": "12345",
+							"type": "default"
+						},
+						{
+							"key": "allDay",
+							"value": "0",
+							"type": "default"
+						},
+						{
+							"key": "start",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "end",
+							"value": "0",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "11111111",
+							"type": "default",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/event-date",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"event-date"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
